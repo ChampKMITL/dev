@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %}
+    <title>ฟอร์มแก้ไขข้อมูล</title>
+{% endblock %}
+
+{% block content %}
+    <h2 style="color: rgb(38, 25, 218);" class="text-center">แบบฟอร์มแก้ไขข้อมูล</h2>
+            <form method="post">
+                {% csrf_token %}
+                <div class="form-group mb-1">
+                    <label for="name">ชื่อประชากร</label>
+                    <input id = "name" type="text" name="name" value="{{person.name}}" class="form-control" placeholder="ใส่ ชื่อประชากร" required >
+                </div>
+
+                <div class="form-group mb-3">
+                    <label for="age">อายุประชากร</label>
+                    <input id = "age" type="number" name="age" value="{{person.age}}"class="form-control" placeholder="ใส่ อายุ" required>
+                </div>
+
+                <button  type="submit" class="btn btn-info">แก้ไขข้อมูล</button>
+                    
+            </form>
+        
+            
+    
+{% endblock %}
